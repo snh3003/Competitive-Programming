@@ -1,3 +1,4 @@
+//https://www.hackerrank.com/challenges/variable-sized-arrays/problem
 #include <cmath>
 #include <cstdio>
 #include <vector>
@@ -18,15 +19,14 @@ int main() {
             cin>>arr[i][j];
         }
     }
-    int row,index,b,c;
-    for(int a=0;a<n;a++)
-    {    
-        for(c=0;c<q;c++){
-            for(b=0;b<q;b++){
-                cin>>row>>index;
-            }
-            cout<<arr[row][index]<<endl;
-        }
+    int row,index,b;
+    int *arr2=new int[q];              
+    for(b=0;b<q;b++){
+        cin>>row>>index;
+        arr2[b]=arr[row][index];
+    }
+    for(int a=0;a<q;a++){
+        cout<<arr2[a]<<endl;
     }
     return 0;
 }
